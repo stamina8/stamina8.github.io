@@ -1,24 +1,16 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Stamina</title><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1"><meta name="description" content=""><meta name="keywords" content="blog"><meta name="author" content="John Doe"><link rel="short icon" href="/images/favicon.png"><link rel="icon" href="/images/favicon.png"><!--[if lt IE 9]>
-<script src="/js/modernizr.js"></script>
-<![endif]-->
-<link rel="stylesheet" href="/css/iconfont.css">
+{% extends "_layout.swig" %}
+{% import '_macro/archive.swig' as archive_template %}
 
-<link rel="stylesheet" href="/css/index.css?v=202103111508.css">
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Stamina" type="application/atom+xml">
-</head><body><header id="header" class="header-navigation"><nav><div class="logo"><a href="https://stam1na.gitee.io">Stamina</a></div><h2 id="mnavh"><span class="navicon"></span></h2><ul id="starlist"><li><a href="/">首页</a></li><li><a href="/time.html">时间轴</a></li></ul><div class="searchbox"><div id="search_bar" class="search_bar"><input id="keyboard" placeholder="想搜点什么呢.." type="text" name="keyboard" autocomplete="off" class="input"><p class="search_ico"><span></span></p></div></div></nav></header><article><main><div class="blogtab"><div data-scroll-reveal="enter bottom over 1s" class="blogs"><h3 class="blogtitle"><a href="/2021/03/10/happy/" target="_blank">happy</a></h3><span class="blogpic"><a href="/2021/03/10/happy/" title="happy"><img src="/" alt=""></a></span><p class="blogtext">第一篇博客献给 Puzzle9
-感谢我的 php 指路人 and 好朋友 —- Puzzle9
-掐指一算，（其实是去看空间了）已经相识1400+天了但是我感觉好像认识很多年了…emmm  大概是人老了 感觉时间过的快了
-感谢遇见~
-</p><div class="bloginfo"><ul><li class="author"><a href="/">Stamina</a></li><li class="lmname"><a href="/"></a></li><li class="timer">2021-03-10 17:44:00</li><!--li.view--><!--    span 34567--><!--    | 已阅读--><!--li.like 9999--></ul></div></div></div><div class="pagelist"><span class="page-number current">1</span></div></main><aside class="r_box"><div class="card box"><h2>我的名片</h2><div class="box_con"><p>网名：Stamina</p>
-<p>职业：码农</p>
-<p>Email：y-hy@qq.com</p>
-</div></div><div class="category box"><h2>文章分类</h2><div class="box_con"></div></div><div class="box recommend"><h2>推荐</h2><div class="box_con"><ul></ul></div></div><div class="tags box"><h2>标签</h2><div class="box_con"></div></div></aside></article><footer><section class="footer_bottom"><div class="footer_container"><p class="copyright">Design by
-<a href='https://blog.yhy94.cn' target='_blank'>有格调的鱼</a>
-</p><ul class="social_network"></ul></div></section></footer><div class="cd-top"><i class="iconfont icon-top"></i></div>
-<script src="/js/jquery.min.js"></script>
-<script src="/js/scrollreveal.js"></script>
-<script src="/js/hc-sticky.js"></script>
-<script src="/js/canvas-nest.js" type="text/javascript" color="47,135,193" opacity="0.7" zIndex="-2" count="199"></script>
-<script src="/js/common.js?v=202103111508.js"></script>
-<script src="/js/index.js?v=202103111508.js"></script>
-</body></html>
+{% block title %}
+  {% if page.archive %}
+    {{ __('menu.archives') }} - {{ config.title }}
+  {% elif page.tag %}
+    {{ page.tag }} - {{ config.title }}
+  {% elif page.category %}
+    {{ page.category }} - {{ config.title }}
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+  {{ archive_template.render() }}
+{% endblock %}

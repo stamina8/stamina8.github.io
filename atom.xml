@@ -3,14 +3,14 @@
   <title>Stamina</title>
   
   
-  <link href="https://stam1na.gitee.io/atom.xml" rel="self"/>
+  <link href="http://stam1na.gitee.io/atom.xml" rel="self"/>
   
-  <link href="https://stam1na.gitee.io/"/>
+  <link href="http://stam1na.gitee.io/"/>
   <updated>2021-03-11T03:39:57.906Z</updated>
-  <id>https://stam1na.gitee.io/</id>
+  <id>http://stam1na.gitee.io/</id>
   
   <author>
-    <name>John Doe</name>
+    <name>stamina</name>
     
   </author>
   
@@ -18,8 +18,8 @@
   
   <entry>
     <title>happy</title>
-    <link href="https://stam1na.gitee.io/2021/03/10/happy/"/>
-    <id>https://stam1na.gitee.io/2021/03/10/happy/</id>
+    <link href="http://stam1na.gitee.io/2021/03/10/happy/"/>
+    <id>http://stam1na.gitee.io/2021/03/10/happy/</id>
     <published>2021-03-10T09:44:00.000Z</published>
     <updated>2021-03-11T03:39:57.906Z</updated>
     

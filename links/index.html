@@ -1,36 +1,18 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>links</title><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1"><meta name="description" content=""><meta name="keywords" content="blog"><meta name="author" content="John Doe"><link rel="short icon" href="/images/favicon.png"><link rel="icon" href="/images/favicon.png"><!--[if lt IE 9]>
-<script src="/js/modernizr.js"></script>
-<![endif]-->
-<link rel="stylesheet" href="/css/iconfont.css">
+{% extends "_layout.swig" %}
 
-<link rel="stylesheet" href="/css/index.css?v=202103111508.css">
-<link rel="stylesheet" href="/css/info.css?v=202103111508.css">
-<link href="https://cdn.bootcss.com/highlight.js/9.15.9/styles/github.min.css" rel="stylesheet"><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Stamina" type="application/atom+xml">
-</head><body><header id="header" class="header-navigation"><nav><div class="logo"><a href="https://stam1na.gitee.io">Stamina</a></div><h2 id="mnavh"><span class="navicon"></span></h2><ul id="starlist"><li><a href="/">首页</a></li><li><a href="/time.html">时间轴</a></li></ul><div class="searchbox"><div id="search_bar" class="search_bar"><input id="keyboard" placeholder="想搜点什么呢.." type="text" name="keyboard" autocomplete="off" class="input"><p class="search_ico"><span></span></p></div></div></nav></header><article><main><div class="con_warp"><div class="infosbox"><div class="newsview"><h3 class="news_title">links</h3><div class="bloginfo"><ul><li class="author">作者：<a href="/">John Doe</a></li><li class="lmname"><a href="/"></a></li><li class="timer">时间：2021-03-11 15:01:05</li><li class="view"><span id="busuanzi_value_page_pv">99</span><span>次访问</span></li></ul></div><div class="tags"></div><div class="news_con"></div></div><div class="nextinfo"><p>上一篇：没有了</p><p>下一篇：没有了</p></div><div class="news_pl"><div id="comment_container"></div>
-<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+{% block title %} {{ page.title }} - {{ config.title }} {% endblock %}
 
-<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-
-<script src="/js/md5.min.js"></script>
-<script>const gitalk = new Gitalk({
-    clientID: 'you github Client ID',
-    clientSecret: 'you github Client Secret',
-    repo: 'you github repository',
-    owner: 'you github repository owner',
-    admin: ['you github repository owner'],
-    id: md5("links/index.html"),      // Ensure uniqueness and length less than 50
-    distractionFreeMode: true  // Facebook-like distraction free mode
-})
-gitalk.render('comment_container')</script></div></div></div></main><aside class="r_box"><div class="card box"><h2>我的名片</h2><div class="box_con"><p>网名：Stamina</p>
-<p>职业：码农</p>
-<p>Email：y-hy@qq.com</p>
-</div></div><div class="category box"><h2>文章分类</h2><div class="box_con"></div></div></aside></article><footer><section class="footer_bottom"><div class="footer_container"><p class="copyright">Design by
-<a href='https://blog.yhy94.cn' target='_blank'>有格调的鱼</a>
-</p><ul class="social_network"></ul></div></section></footer><div class="cd-top"><i class="iconfont icon-top"></i></div>
-<script src="/js/jquery.min.js"></script>
-<script src="/js/scrollreveal.js"></script>
-<script src="/js/hc-sticky.js"></script>
-<script src="/js/canvas-nest.js" type="text/javascript" color="47,135,193" opacity="0.7" zIndex="-2" count="199"></script><script src="https://cdn.bootcss.com/highlight.js/9.15.9/highlight.min.js"></script><script src="https://cdn.bootcss.com/highlight.js/9.15.9/languages/java.min.js"></script><script src="https://cdn.bootcss.com/highlight.js/9.15.9/languages/javascript.min.js"></script><script type="text/javascript">hljs.initHighlightingOnLoad();</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<script src="/js/common.js?v=202103111508.js"></script>
-<script src="/js/index.js?v=202103111508.js"></script>
-</body></html>
+{% block content %}
+    <div id="primary">
+        <article class="post">
+            <header class="post-header">
+                <h1 class="post-title">
+                    {{ page.title }}
+                </h1>
+            </header>
+            <div class="post-content">
+                {{ page.content }}
+            </div>
+        </article>
+    </div>
+{% endblock %}
