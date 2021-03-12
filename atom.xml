@@ -6,7 +6,7 @@
   <link href="http://stam1na.gitee.io/atom.xml" rel="self"/>
   
   <link href="http://stam1na.gitee.io/"/>
-  <updated>2021-03-11T03:39:57.906Z</updated>
+  <updated>2021-03-12T05:30:40.964Z</updated>
   <id>http://stam1na.gitee.io/</id>
   
   <author>
@@ -17,20 +17,40 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>go home</title>
+    <link href="http://stam1na.gitee.io/2021/03/12/go-home/"/>
+    <id>http://stam1na.gitee.io/2021/03/12/go-home/</id>
+    <published>2021-03-12T05:28:54.000Z</published>
+    <updated>2021-03-12T05:30:40.964Z</updated>
+    
+    <content type="html"><![CDATA[<p>弥补过年没有回家</p><p>一口气休9天可还行</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;弥补过年没有回家&lt;/p&gt;
+&lt;p&gt;一口气休9天可还行&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>happy</title>
     <link href="http://stam1na.gitee.io/2021/03/10/happy/"/>
     <id>http://stam1na.gitee.io/2021/03/10/happy/</id>
     <published>2021-03-10T09:44:00.000Z</published>
-    <updated>2021-03-11T03:39:57.906Z</updated>
+    <updated>2021-03-12T05:28:33.889Z</updated>
     
-    <content type="html"><![CDATA[<p>第一篇博客献给 <a href="http://puzzle9.github.io/">Puzzle9</a></p><p>感谢<br>我的 php 指路人 and 好朋友 —- Puzzle9</p><p>掐指一算，（其实是去看空间了）已经相识1400+天了<br>但是我感觉好像认识很多年了…emmm  大概是人老了 感觉时间过的快了</p><p>感谢遇见~</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="第一篇博客献给-Puzzle9"><a href="#第一篇博客献给-Puzzle9" class="headerlink" title="第一篇博客献给 Puzzle9"></a>第一篇博客献给 <a href="http://puzzle9.github.io/">Puzzle9</a></h2><p>感谢<br>我的 php 指路人 and 好朋友 —- Puzzle9</p><p>掐指一算，（其实是去看空间了）已经相识1400+天了<br>但是我感觉好像认识很多年了…emmm  大概是人老了 感觉时间过的快了</p><p>感谢遇见~</p>]]></content>
     
     
       
       
-    <summary type="html">&lt;p&gt;第一篇博客献给 &lt;a href=&quot;http://puzzle9.github.io/&quot;&gt;Puzzle9&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;感谢&lt;br&gt;我的 php 指路人 and 好朋友 —- Puzzle9&lt;/p&gt;
-&lt;p&gt;掐指一算，（其实是去看空间了）已经相识1400+天了&lt;br&gt;但</summary>
+    <summary type="html">&lt;h2 id=&quot;第一篇博客献给-Puzzle9&quot;&gt;&lt;a href=&quot;#第一篇博客献给-Puzzle9&quot; class=&quot;headerlink&quot; title=&quot;第一篇博客献给 Puzzle9&quot;&gt;&lt;/a&gt;第一篇博客献给 &lt;a href=&quot;http://puzzle9.github.io</summary>
       
     
     
