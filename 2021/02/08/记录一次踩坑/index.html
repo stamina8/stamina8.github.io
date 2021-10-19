@@ -72,45 +72,35 @@
     
   </ul>
 </div>
+      <article class="post" id="post">
+  <header class="post-head">
+    <h1 class="post-title">
+      <a class="title" href="/2021/02/08/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E8%B8%A9%E5%9D%91/">
+        记录一次lnmp安装后踩坑&gt;&gt;&gt;&gt;
+      </a>
+    </h1>
+  </header>
+  <div class="post-datetag">
+    <div class="post-date">
+      <time class="post-time" title="2021-02-08 16:11:58" datetime="2021-02-08T08:11:58.000Z" itemprop="datePublished">
+  2021-02-08</time>
+    </div>
+    <div class="post-tag">
       
-  
-  
+    </div>
+  </div>
+  <div class="article-entry" itemprop="articleBody">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <span class="archive-year">2021</span>
-        </div>
-        <div class="archives-year-cont">
-    
-    <div class="archive-item">
-  <span class="archive-artDate">
-    <time class="post-time" title="2021-10-19 15:31:50" datetime="2021-10-19T07:31:50.000Z" itemprop="datePublished">
-      Oct 19
-    </time>
-  </span>
-  <span class="archive-arttitle">
-    
-        
-          <a href="/2021/10/19/Git-%E7%89%88%E6%9C%AC%E5%9B%9E%E9%80%80-%E7%B2%BE%E5%8D%8E/">
-            Git 版本回退 [精华]
-          </a>
-          
-                
-  </span>
-</div>
-  
-  
-    </div></section>
-  
+    <p>lnmp安装后，一切正常，唯独<code>Laravel HTTP500</code> ，解决如下 :</p>
+<p>注释掉<code>/usr/local/nginx/conf/fastcgi.conf</code><br>最后一行的：<br><code>#fastcgi_param PHP_ADMIN_VALUE </code><br><code>&quot;open_basedir=$document_root/:/tmp/:/proc/&quot;;</code></p>
+<p>或者改为：<br><code>fastcgi_param PHP_ADMIN_VALUE &quot;open_basedir=/home/wwwroot/:/tmp/:/proc/:/&quot;;</code></p>
+<p>就OK了，不过我这里注释掉后又遇到了权限问题，给<code>storage</code>目录重新 <code>chmod 777 -R storage</code>了一下</p>
+<p>由于laravel框架的入口文件不再项目根目录，而在<code>public</code>目录下，当我在lnmp中用<code>lnmp vhost add</code>命令添加虚拟主机并将域名制定到<code>public</code>目录下时，会在<code>public</code>目录下生成<code>.user.ini</code>文件，</p>
+<p>里边的内容是：<code>open_basedir=/home/wwwroot/blog/public:/tmp/:/proc/</code>，所以导致<code>laravel</code>请求不到<code>public</code>目录意外的文件而报错。</p>
 
-<div class="archive-pagination">
     
-    
-
-</div>
+  </div>
+</article>
 
     </div>
     <footer class="footer-nav">
