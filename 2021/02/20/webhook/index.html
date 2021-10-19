@@ -98,7 +98,7 @@
 <p>先确认有没有/home/www/.ssh该路径，如果没有的话先创建：</p>
 <p>Bash<br>sudo mkdir -p /home/www/.ssh<br>修改ssh公钥存放路径权限</p>
 <p>Bash<br>sudo chown -R www:www /home/www/.ssh<br>使用www用户组去创建公钥</p>
-<p>Bash<br>sudo -Hu www ssh-keygen -t rsa -C “<a href="mailto:&#x78;&#x78;&#x78;&#x40;&#x78;&#120;&#x78;&#120;&#x78;&#120;&#46;&#x63;&#x6f;&#109;">&#x78;&#x78;&#x78;&#x40;&#x78;&#120;&#x78;&#120;&#x78;&#120;&#46;&#x63;&#x6f;&#109;</a>“<br>三次回车后即可生成ssh公钥，接下来查看公钥</p>
+<p>Bash<br>sudo -Hu www ssh-keygen -t rsa -C “<a href="mailto:&#x78;&#x78;&#120;&#x40;&#x78;&#x78;&#120;&#120;&#120;&#120;&#46;&#x63;&#111;&#109;">&#x78;&#x78;&#120;&#x40;&#x78;&#x78;&#120;&#120;&#120;&#120;&#46;&#x63;&#111;&#109;</a>“<br>三次回车后即可生成ssh公钥，接下来查看公钥</p>
 <p>Bash<br>sudo cat /home/www/.ssh/id_rsa.pub<br>把公钥复制到项目的部署公钥管理里面即可。</p>
 <p>注意事项</p>
 <p>1、请确保项目的用户组为www，如果不是则：</p>
