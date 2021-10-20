@@ -6,7 +6,7 @@
   <link href="http://stam1na.gitee.io/atom.xml" rel="self"/>
   
   <link href="http://stam1na.gitee.io/"/>
-  <updated>2021-10-19T09:46:32.489Z</updated>
+  <updated>2021-10-19T09:48:46.521Z</updated>
   <id>http://stam1na.gitee.io/</id>
   
   <author>
@@ -15,23 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>Git 版本回退 [精华]</title>
-    <link href="http://stam1na.gitee.io/2021/10/19/Git-%E7%89%88%E6%9C%AC%E5%9B%9E%E9%80%80-%E7%B2%BE%E5%8D%8E/"/>
-    <id>http://stam1na.gitee.io/2021/10/19/Git-%E7%89%88%E6%9C%AC%E5%9B%9E%E9%80%80-%E7%B2%BE%E5%8D%8E/</id>
-    <published>2021-10-19T07:31:50.000Z</published>
-    <updated>2021-10-19T09:46:32.489Z</updated>
-    
-    <content type="html"><![CDATA[<p>　　</p><span id="more"></span><ol><li>git log<br>定义：该命令显示从最近到最远的提交日志。每一次提交都有对应的 commit id 和 commit message。</li></ol><p>如果嫌弃输出的信息杂乱无章，那么加上 –pretty=oneline 参数试试吧！</p><ol start="2"><li><p>git reset –hard id<br>定义：根据 id 回退到指定的版本；<br>我们已经根据 git log 命令看到了所有的提交的信息，本文中，我以回退到 个人模块修改包引入顺序 版本，即 commit id 为 7222c8f6be2d663982faa98dffe2647966b438b1；<br>效果：</p></li><li><p>git push origin HEAD –force<br>推送到本地到远程仓库：让远程仓库代码和你本地一样，到当前你本地的版本。<br>这个时候突然又发现不需要回退了，刚才那些消失的代码又要重新找回来了，别担心，咱们 Git 强大着呢！</p></li><li><p>git reflog<br>定义：查看命令操作的历史</p></li></ol><p>查找到你要的 操作id，依旧使用 上文说的 git reset –hard id。又回退到当初一模一样的版本啰！</p>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;　　&lt;/p&gt;</summary>
-    
-    
-    
-    
-  </entry>
   
   <entry>
     <title>侠录</title>
@@ -57,7 +40,7 @@
     <published>2021-02-19T16:00:00.000Z</published>
     <updated>2021-10-19T09:47:13.445Z</updated>
     
-    <content type="html"><![CDATA[<p>[在用方法]</p><span id="more"></span><p>检查系统php运行时使用的用户</p><p>可以在<code>webhooks.php</code>中写入以下代码，访问一下就知道了：</p><p>PHP<br>exec(“cd ~ &amp;&amp; cd - &amp;&amp; cd -“, $output);<br>print_r($output);<br>创建ssh公钥存放路径</p><p>先确认有没有/home/www/.ssh该路径，如果没有的话先创建：</p><p>Bash<br>sudo mkdir -p /home/www/.ssh<br>修改ssh公钥存放路径权限</p><p>Bash<br>sudo chown -R www:www /home/www/.ssh<br>使用www用户组去创建公钥</p><p>Bash<br>sudo -Hu www ssh-keygen -t rsa -C “<a href="mailto:&#x78;&#120;&#120;&#x40;&#120;&#x78;&#120;&#120;&#120;&#120;&#x2e;&#99;&#111;&#109;">&#x78;&#120;&#120;&#x40;&#120;&#x78;&#120;&#120;&#120;&#120;&#x2e;&#99;&#111;&#109;</a>“<br>三次回车后即可生成ssh公钥，接下来查看公钥</p><p>Bash<br>sudo cat /home/www/.ssh/id_rsa.pub<br>把公钥复制到项目的部署公钥管理里面即可。</p><p>注意事项</p><p>1、请确保项目的用户组为www，如果不是则：</p><p>Bash<br>sudo chown -R www:www 项目路径<br>2、首次需要先：</p><p>Bash<br>sudo -Hu www git pull<br>然后才可以使用webhooks进行自动化部署。</p><p>[报错解决]<br>用户用sudo执行命令时报如题所示错误：</p><p>xxx is not in the sudoers file.This incident will be reported<br>解决方法就是在/etc/sudoers文件里给该用户添加权限。如下：</p><p>切换到root用户<br>sudo su</p><p>etc/sudoers文件默认是只读的，对root来说也是，因此需先添加sudoers文件的写权限,如果缺少这一步，在修改/etc/sudoers之后，无法保存。除非之前已经赋予他有写的权限<br>chmod u+w /etc/sudoers<br>3.编辑sudoers文件,找到这行 root ALL=(ALL) ALL,在他下面添加xxx ALL=(ALL) ALL (这里的xxx是你的用户名)</p><p>vim /etc/sudoers</p><p>给www用户添加root权限<br>wwwALL=(ALL) ALL<br>注意：</p><p>ps:这里说下你可以sudoers添加下面四行中任意一条</p><p>youuser ALL=(ALL) ALL</p><p>%youuser ALL=(ALL) ALL</p><p>youuser ALL=(ALL) NOPASSWD: ALL</p><p>%youuser ALL=(ALL) NOPASSWD: ALL</p><p>第一行:允许用户youuser执行sudo命令(需要输入密码).</p><p>第二行:允许用户组youuser里面的用户执行sudo命令(需要输入密码).</p><p>第三行:允许用户youuser执行sudo命令,并且在执行的时候不输入密码.</p><p>第四行:允许用户组youuser里面的用户执行sudo命令,并且在执行的时候不输入密码.</p><p>撤销sudoers文件写权限<br>chmod u-w /etc/sudoers</p>]]></content>
+    <content type="html"><![CDATA[<p>[在用方法]</p><span id="more"></span><p>检查系统php运行时使用的用户</p><p>可以在<code>webhooks.php</code>中写入以下代码，访问一下就知道了：</p><p>PHP<br>exec(“cd ~ &amp;&amp; cd - &amp;&amp; cd -“, $output);<br>print_r($output);<br>创建ssh公钥存放路径</p><p>先确认有没有/home/www/.ssh该路径，如果没有的话先创建：</p><p>Bash<br>sudo mkdir -p /home/www/.ssh<br>修改ssh公钥存放路径权限</p><p>Bash<br>sudo chown -R www:www /home/www/.ssh<br>使用www用户组去创建公钥</p><p>Bash<br>sudo -Hu www ssh-keygen -t rsa -C “<a href="mailto:&#x78;&#x78;&#120;&#64;&#x78;&#120;&#x78;&#120;&#120;&#x78;&#46;&#99;&#x6f;&#109;">&#x78;&#x78;&#120;&#64;&#x78;&#120;&#x78;&#120;&#120;&#x78;&#46;&#99;&#x6f;&#109;</a>“<br>三次回车后即可生成ssh公钥，接下来查看公钥</p><p>Bash<br>sudo cat /home/www/.ssh/id_rsa.pub<br>把公钥复制到项目的部署公钥管理里面即可。</p><p>注意事项</p><p>1、请确保项目的用户组为www，如果不是则：</p><p>Bash<br>sudo chown -R www:www 项目路径<br>2、首次需要先：</p><p>Bash<br>sudo -Hu www git pull<br>然后才可以使用webhooks进行自动化部署。</p><p>[报错解决]<br>用户用sudo执行命令时报如题所示错误：</p><p>xxx is not in the sudoers file.This incident will be reported<br>解决方法就是在/etc/sudoers文件里给该用户添加权限。如下：</p><p>切换到root用户<br>sudo su</p><p>etc/sudoers文件默认是只读的，对root来说也是，因此需先添加sudoers文件的写权限,如果缺少这一步，在修改/etc/sudoers之后，无法保存。除非之前已经赋予他有写的权限<br>chmod u+w /etc/sudoers<br>3.编辑sudoers文件,找到这行 root ALL=(ALL) ALL,在他下面添加xxx ALL=(ALL) ALL (这里的xxx是你的用户名)</p><p>vim /etc/sudoers</p><p>给www用户添加root权限<br>wwwALL=(ALL) ALL<br>注意：</p><p>ps:这里说下你可以sudoers添加下面四行中任意一条</p><p>youuser ALL=(ALL) ALL</p><p>%youuser ALL=(ALL) ALL</p><p>youuser ALL=(ALL) NOPASSWD: ALL</p><p>%youuser ALL=(ALL) NOPASSWD: ALL</p><p>第一行:允许用户youuser执行sudo命令(需要输入密码).</p><p>第二行:允许用户组youuser里面的用户执行sudo命令(需要输入密码).</p><p>第三行:允许用户youuser执行sudo命令,并且在执行的时候不输入密码.</p><p>第四行:允许用户组youuser里面的用户执行sudo命令,并且在执行的时候不输入密码.</p><p>撤销sudoers文件写权限<br>chmod u-w /etc/sudoers</p>]]></content>
     
     
     <summary type="html">&lt;p&gt;[在用方法]&lt;/p&gt;</summary>
@@ -112,6 +95,23 @@
     
     
     <summary type="html">&lt;p&gt;小伙伴写了一条sql，查询2K条数据，居然要280s，惊呆了奥&lt;/p&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Git 版本回退 [精华]</title>
+    <link href="http://stam1na.gitee.io/2019/12/18/Git-%E7%89%88%E6%9C%AC%E5%9B%9E%E9%80%80-%E7%B2%BE%E5%8D%8E/"/>
+    <id>http://stam1na.gitee.io/2019/12/18/Git-%E7%89%88%E6%9C%AC%E5%9B%9E%E9%80%80-%E7%B2%BE%E5%8D%8E/</id>
+    <published>2019-12-17T16:00:00.000Z</published>
+    <updated>2021-10-20T07:20:20.381Z</updated>
+    
+    <content type="html"><![CDATA[<p>　　</p><span id="more"></span><ol><li>git log<br>定义：该命令显示从最近到最远的提交日志。每一次提交都有对应的 commit id 和 commit message。</li></ol><p>如果嫌弃输出的信息杂乱无章，那么加上 –pretty=oneline 参数试试吧！</p><ol start="2"><li><p>git reset –hard id<br>定义：根据 id 回退到指定的版本；<br>我们已经根据 git log 命令看到了所有的提交的信息，本文中，我以回退到 个人模块修改包引入顺序 版本，即 commit id 为 7222c8f6be2d663982faa98dffe2647966b438b1；<br>效果：</p></li><li><p>git push origin HEAD –force<br>推送到本地到远程仓库：让远程仓库代码和你本地一样，到当前你本地的版本。<br>这个时候突然又发现不需要回退了，刚才那些消失的代码又要重新找回来了，别担心，咱们 Git 强大着呢！</p></li><li><p>git reflog<br>定义：查看命令操作的历史</p></li></ol><p>查找到你要的 操作id，依旧使用 上文说的 git reset –hard id。又回退到当初一模一样的版本啰！</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;　　&lt;/p&gt;</summary>
     
     
     
