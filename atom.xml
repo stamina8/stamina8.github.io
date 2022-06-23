@@ -3,11 +3,11 @@
   <title>Stamina</title>
   
   
-  <link href="http://stam1na.gitee.io/atom.xml" rel="self"/>
+  <link href="https://stam1na.gitee.io/atom.xml" rel="self"/>
   
-  <link href="http://stam1na.gitee.io/"/>
+  <link href="https://stam1na.gitee.io/"/>
   <updated>2022-03-01T08:23:32.764Z</updated>
-  <id>http://stam1na.gitee.io/</id>
+  <id>https://stam1na.gitee.io/</id>
   
   <author>
     <name>stamina</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>W11 快捷键</title>
-    <link href="http://stam1na.gitee.io/2022/03/01/W11-%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
-    <id>http://stam1na.gitee.io/2022/03/01/W11-%E5%BF%AB%E6%8D%B7%E9%94%AE/</id>
+    <link href="https://stam1na.gitee.io/2022/03/01/W11-%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+    <id>https://stam1na.gitee.io/2022/03/01/W11-%E5%BF%AB%E6%8D%B7%E9%94%AE/</id>
     <published>2022-03-01T08:01:00.000Z</published>
     <updated>2022-03-01T08:23:32.764Z</updated>
     
@@ -35,8 +35,8 @@
   
   <entry>
     <title>侠录</title>
-    <link href="http://stam1na.gitee.io/2021/08/04/%E4%BE%A0%E5%BD%95/"/>
-    <id>http://stam1na.gitee.io/2021/08/04/%E4%BE%A0%E5%BD%95/</id>
+    <link href="https://stam1na.gitee.io/2021/08/04/%E4%BE%A0%E5%BD%95/"/>
+    <id>https://stam1na.gitee.io/2021/08/04/%E4%BE%A0%E5%BD%95/</id>
     <published>2021-08-03T16:00:00.000Z</published>
     <updated>2021-10-19T09:48:46.521Z</updated>
     
@@ -52,12 +52,12 @@
   
   <entry>
     <title>webhook</title>
-    <link href="http://stam1na.gitee.io/2021/02/20/webhook/"/>
-    <id>http://stam1na.gitee.io/2021/02/20/webhook/</id>
+    <link href="https://stam1na.gitee.io/2021/02/20/webhook/"/>
+    <id>https://stam1na.gitee.io/2021/02/20/webhook/</id>
     <published>2021-02-19T16:00:00.000Z</published>
     <updated>2021-10-19T09:47:13.445Z</updated>
     
-    <content type="html"><![CDATA[<p>[在用方法]</p><span id="more"></span><p>检查系统php运行时使用的用户</p><p>可以在<code>webhooks.php</code>中写入以下代码，访问一下就知道了：</p><p>PHP<br>exec(“cd ~ &amp;&amp; cd - &amp;&amp; cd -“, $output);<br>print_r($output);<br>创建ssh公钥存放路径</p><p>先确认有没有/home/www/.ssh该路径，如果没有的话先创建：</p><p>Bash<br>sudo mkdir -p /home/www/.ssh<br>修改ssh公钥存放路径权限</p><p>Bash<br>sudo chown -R www:www /home/www/.ssh<br>使用www用户组去创建公钥</p><p>Bash<br>sudo -Hu www ssh-keygen -t rsa -C “<a href="mailto:&#x78;&#x78;&#x78;&#x40;&#120;&#x78;&#120;&#120;&#x78;&#x78;&#x2e;&#x63;&#x6f;&#x6d;">&#x78;&#x78;&#x78;&#x40;&#120;&#x78;&#120;&#120;&#x78;&#x78;&#x2e;&#x63;&#x6f;&#x6d;</a>“<br>三次回车后即可生成ssh公钥，接下来查看公钥</p><p>Bash<br>sudo cat /home/www/.ssh/id_rsa.pub<br>把公钥复制到项目的部署公钥管理里面即可。</p><p>注意事项</p><p>1、请确保项目的用户组为www，如果不是则：</p><p>Bash<br>sudo chown -R www:www 项目路径<br>2、首次需要先：</p><p>Bash<br>sudo -Hu www git pull<br>然后才可以使用webhooks进行自动化部署。</p><p>[报错解决]<br>用户用sudo执行命令时报如题所示错误：</p><p>xxx is not in the sudoers file.This incident will be reported<br>解决方法就是在/etc/sudoers文件里给该用户添加权限。如下：</p><p>切换到root用户<br>sudo su</p><p>etc/sudoers文件默认是只读的，对root来说也是，因此需先添加sudoers文件的写权限,如果缺少这一步，在修改/etc/sudoers之后，无法保存。除非之前已经赋予他有写的权限<br>chmod u+w /etc/sudoers<br>3.编辑sudoers文件,找到这行 root ALL=(ALL) ALL,在他下面添加xxx ALL=(ALL) ALL (这里的xxx是你的用户名)</p><p>vim /etc/sudoers</p><p>给www用户添加root权限<br>wwwALL=(ALL) ALL<br>注意：</p><p>ps:这里说下你可以sudoers添加下面四行中任意一条</p><p>youuser ALL=(ALL) ALL</p><p>%youuser ALL=(ALL) ALL</p><p>youuser ALL=(ALL) NOPASSWD: ALL</p><p>%youuser ALL=(ALL) NOPASSWD: ALL</p><p>第一行:允许用户youuser执行sudo命令(需要输入密码).</p><p>第二行:允许用户组youuser里面的用户执行sudo命令(需要输入密码).</p><p>第三行:允许用户youuser执行sudo命令,并且在执行的时候不输入密码.</p><p>第四行:允许用户组youuser里面的用户执行sudo命令,并且在执行的时候不输入密码.</p><p>撤销sudoers文件写权限<br>chmod u-w /etc/sudoers</p>]]></content>
+    <content type="html"><![CDATA[<p>[在用方法]</p><span id="more"></span><p>检查系统php运行时使用的用户</p><p>可以在<code>webhooks.php</code>中写入以下代码，访问一下就知道了：</p><p>PHP<br>exec(“cd ~ &amp;&amp; cd - &amp;&amp; cd -“, $output);<br>print_r($output);<br>创建ssh公钥存放路径</p><p>先确认有没有/home/www/.ssh该路径，如果没有的话先创建：</p><p>Bash<br>sudo mkdir -p /home/www/.ssh<br>修改ssh公钥存放路径权限</p><p>Bash<br>sudo chown -R www:www /home/www/.ssh<br>使用www用户组去创建公钥</p><p>Bash<br>sudo -Hu www ssh-keygen -t rsa -C “<a href="mailto:&#x78;&#x78;&#120;&#x40;&#x78;&#120;&#120;&#x78;&#120;&#x78;&#x2e;&#x63;&#x6f;&#x6d;">&#x78;&#x78;&#120;&#x40;&#x78;&#120;&#120;&#x78;&#120;&#x78;&#x2e;&#x63;&#x6f;&#x6d;</a>“<br>三次回车后即可生成ssh公钥，接下来查看公钥</p><p>Bash<br>sudo cat /home/www/.ssh/id_rsa.pub<br>把公钥复制到项目的部署公钥管理里面即可。</p><p>注意事项</p><p>1、请确保项目的用户组为www，如果不是则：</p><p>Bash<br>sudo chown -R www:www 项目路径<br>2、首次需要先：</p><p>Bash<br>sudo -Hu www git pull<br>然后才可以使用webhooks进行自动化部署。</p><p>[报错解决]<br>用户用sudo执行命令时报如题所示错误：</p><p>xxx is not in the sudoers file.This incident will be reported<br>解决方法就是在/etc/sudoers文件里给该用户添加权限。如下：</p><p>切换到root用户<br>sudo su</p><p>etc/sudoers文件默认是只读的，对root来说也是，因此需先添加sudoers文件的写权限,如果缺少这一步，在修改/etc/sudoers之后，无法保存。除非之前已经赋予他有写的权限<br>chmod u+w /etc/sudoers<br>3.编辑sudoers文件,找到这行 root ALL=(ALL) ALL,在他下面添加xxx ALL=(ALL) ALL (这里的xxx是你的用户名)</p><p>vim /etc/sudoers</p><p>给www用户添加root权限<br>wwwALL=(ALL) ALL<br>注意：</p><p>ps:这里说下你可以sudoers添加下面四行中任意一条</p><p>youuser ALL=(ALL) ALL</p><p>%youuser ALL=(ALL) ALL</p><p>youuser ALL=(ALL) NOPASSWD: ALL</p><p>%youuser ALL=(ALL) NOPASSWD: ALL</p><p>第一行:允许用户youuser执行sudo命令(需要输入密码).</p><p>第二行:允许用户组youuser里面的用户执行sudo命令(需要输入密码).</p><p>第三行:允许用户youuser执行sudo命令,并且在执行的时候不输入密码.</p><p>第四行:允许用户组youuser里面的用户执行sudo命令,并且在执行的时候不输入密码.</p><p>撤销sudoers文件写权限<br>chmod u-w /etc/sudoers</p>]]></content>
     
     
     <summary type="html">&lt;p&gt;[在用方法]&lt;/p&gt;</summary>
@@ -69,8 +69,8 @@
   
   <entry>
     <title>记录一次lnmp安装后踩坑&gt;&gt;&gt;&gt;</title>
-    <link href="http://stam1na.gitee.io/2021/02/08/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E8%B8%A9%E5%9D%91/"/>
-    <id>http://stam1na.gitee.io/2021/02/08/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E8%B8%A9%E5%9D%91/</id>
+    <link href="https://stam1na.gitee.io/2021/02/08/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E8%B8%A9%E5%9D%91/"/>
+    <id>https://stam1na.gitee.io/2021/02/08/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E8%B8%A9%E5%9D%91/</id>
     <published>2021-02-08T08:11:58.000Z</published>
     <updated>2021-10-22T06:12:47.449Z</updated>
     
@@ -86,8 +86,8 @@
   
   <entry>
     <title>访问日志 access.log 按日期生成</title>
-    <link href="http://stam1na.gitee.io/2020/10/28/%E8%AE%BF%E9%97%AE%E6%97%A5%E5%BF%97-access-log-%E6%8C%89%E6%97%A5%E6%9C%9F%E7%94%9F%E6%88%90/"/>
-    <id>http://stam1na.gitee.io/2020/10/28/%E8%AE%BF%E9%97%AE%E6%97%A5%E5%BF%97-access-log-%E6%8C%89%E6%97%A5%E6%9C%9F%E7%94%9F%E6%88%90/</id>
+    <link href="https://stam1na.gitee.io/2020/10/28/%E8%AE%BF%E9%97%AE%E6%97%A5%E5%BF%97-access-log-%E6%8C%89%E6%97%A5%E6%9C%9F%E7%94%9F%E6%88%90/"/>
+    <id>https://stam1na.gitee.io/2020/10/28/%E8%AE%BF%E9%97%AE%E6%97%A5%E5%BF%97-access-log-%E6%8C%89%E6%97%A5%E6%9C%9F%E7%94%9F%E6%88%90/</id>
     <published>2020-10-27T16:00:00.000Z</published>
     <updated>2021-10-19T09:47:26.335Z</updated>
     
@@ -103,8 +103,8 @@
   
   <entry>
     <title>MySQL Explain详解</title>
-    <link href="http://stam1na.gitee.io/2020/01/06/MySQL-Explain%E8%AF%A6%E8%A7%A3/"/>
-    <id>http://stam1na.gitee.io/2020/01/06/MySQL-Explain%E8%AF%A6%E8%A7%A3/</id>
+    <link href="https://stam1na.gitee.io/2020/01/06/MySQL-Explain%E8%AF%A6%E8%A7%A3/"/>
+    <id>https://stam1na.gitee.io/2020/01/06/MySQL-Explain%E8%AF%A6%E8%A7%A3/</id>
     <published>2020-01-05T16:00:00.000Z</published>
     <updated>2021-10-19T09:47:08.927Z</updated>
     
@@ -120,8 +120,8 @@
   
   <entry>
     <title>Git 版本回退 [精华]</title>
-    <link href="http://stam1na.gitee.io/2019/12/18/Git-%E7%89%88%E6%9C%AC%E5%9B%9E%E9%80%80-%E7%B2%BE%E5%8D%8E/"/>
-    <id>http://stam1na.gitee.io/2019/12/18/Git-%E7%89%88%E6%9C%AC%E5%9B%9E%E9%80%80-%E7%B2%BE%E5%8D%8E/</id>
+    <link href="https://stam1na.gitee.io/2019/12/18/Git-%E7%89%88%E6%9C%AC%E5%9B%9E%E9%80%80-%E7%B2%BE%E5%8D%8E/"/>
+    <id>https://stam1na.gitee.io/2019/12/18/Git-%E7%89%88%E6%9C%AC%E5%9B%9E%E9%80%80-%E7%B2%BE%E5%8D%8E/</id>
     <published>2019-12-17T16:00:00.000Z</published>
     <updated>2021-10-20T07:20:20.381Z</updated>
     
@@ -137,8 +137,8 @@
   
   <entry>
     <title>为期3个月的坚持</title>
-    <link href="http://stam1na.gitee.io/2018/06/15/%E4%B8%BA%E6%9C%9F3%E4%B8%AA%E6%9C%88%E7%9A%84%E5%9D%9A%E6%8C%81/"/>
-    <id>http://stam1na.gitee.io/2018/06/15/%E4%B8%BA%E6%9C%9F3%E4%B8%AA%E6%9C%88%E7%9A%84%E5%9D%9A%E6%8C%81/</id>
+    <link href="https://stam1na.gitee.io/2018/06/15/%E4%B8%BA%E6%9C%9F3%E4%B8%AA%E6%9C%88%E7%9A%84%E5%9D%9A%E6%8C%81/"/>
+    <id>https://stam1na.gitee.io/2018/06/15/%E4%B8%BA%E6%9C%9F3%E4%B8%AA%E6%9C%88%E7%9A%84%E5%9D%9A%E6%8C%81/</id>
     <published>2018-06-14T16:00:00.000Z</published>
     <updated>2021-10-19T07:01:46.199Z</updated>
     
@@ -158,8 +158,8 @@
   
   <entry>
     <title>记。那时年少</title>
-    <link href="http://stam1na.gitee.io/2018/06/12/%E8%AE%B0%E3%80%82%E9%82%A3%E6%97%B6%E5%B9%B4%E5%B0%91/"/>
-    <id>http://stam1na.gitee.io/2018/06/12/%E8%AE%B0%E3%80%82%E9%82%A3%E6%97%B6%E5%B9%B4%E5%B0%91/</id>
+    <link href="https://stam1na.gitee.io/2018/06/12/%E8%AE%B0%E3%80%82%E9%82%A3%E6%97%B6%E5%B9%B4%E5%B0%91/"/>
+    <id>https://stam1na.gitee.io/2018/06/12/%E8%AE%B0%E3%80%82%E9%82%A3%E6%97%B6%E5%B9%B4%E5%B0%91/</id>
     <published>2018-06-11T16:00:00.000Z</published>
     <updated>2021-10-19T09:47:56.324Z</updated>
     
@@ -175,8 +175,8 @@
   
   <entry>
     <title>致橡树</title>
-    <link href="http://stam1na.gitee.io/2018/04/27/%E8%87%B4%E6%A9%A1%E6%A0%91/"/>
-    <id>http://stam1na.gitee.io/2018/04/27/%E8%87%B4%E6%A9%A1%E6%A0%91/</id>
+    <link href="https://stam1na.gitee.io/2018/04/27/%E8%87%B4%E6%A9%A1%E6%A0%91/"/>
+    <id>https://stam1na.gitee.io/2018/04/27/%E8%87%B4%E6%A9%A1%E6%A0%91/</id>
     <published>2018-04-26T16:00:00.000Z</published>
     <updated>2021-10-19T09:49:06.212Z</updated>
     
@@ -192,8 +192,8 @@
   
   <entry>
     <title>人生如棋局局新</title>
-    <link href="http://stam1na.gitee.io/2018/04/26/%E4%BA%BA%E7%94%9F%E5%A6%82%E6%A3%8B%E5%B1%80%E5%B1%80%E6%96%B0/"/>
-    <id>http://stam1na.gitee.io/2018/04/26/%E4%BA%BA%E7%94%9F%E5%A6%82%E6%A3%8B%E5%B1%80%E5%B1%80%E6%96%B0/</id>
+    <link href="https://stam1na.gitee.io/2018/04/26/%E4%BA%BA%E7%94%9F%E5%A6%82%E6%A3%8B%E5%B1%80%E5%B1%80%E6%96%B0/"/>
+    <id>https://stam1na.gitee.io/2018/04/26/%E4%BA%BA%E7%94%9F%E5%A6%82%E6%A3%8B%E5%B1%80%E5%B1%80%E6%96%B0/</id>
     <published>2018-04-25T16:00:00.000Z</published>
     <updated>2021-10-19T09:48:15.159Z</updated>
     
@@ -209,8 +209,8 @@
   
   <entry>
     <title>固化思维</title>
-    <link href="http://stam1na.gitee.io/2018/01/30/%E5%9B%BA%E5%8C%96%E6%80%9D%E7%BB%B4/"/>
-    <id>http://stam1na.gitee.io/2018/01/30/%E5%9B%BA%E5%8C%96%E6%80%9D%E7%BB%B4/</id>
+    <link href="https://stam1na.gitee.io/2018/01/30/%E5%9B%BA%E5%8C%96%E6%80%9D%E7%BB%B4/"/>
+    <id>https://stam1na.gitee.io/2018/01/30/%E5%9B%BA%E5%8C%96%E6%80%9D%E7%BB%B4/</id>
     <published>2018-01-29T16:00:00.000Z</published>
     <updated>2021-10-19T09:47:50.428Z</updated>
     
@@ -226,8 +226,8 @@
   
   <entry>
     <title>11.30</title>
-    <link href="http://stam1na.gitee.io/2017/12/01/11-30/"/>
-    <id>http://stam1na.gitee.io/2017/12/01/11-30/</id>
+    <link href="https://stam1na.gitee.io/2017/12/01/11-30/"/>
+    <id>https://stam1na.gitee.io/2017/12/01/11-30/</id>
     <published>2017-11-30T16:00:00.000Z</published>
     <updated>2021-10-19T09:46:55.371Z</updated>
     
@@ -243,8 +243,8 @@
   
   <entry>
     <title>舍得，得舍。</title>
-    <link href="http://stam1na.gitee.io/2017/11/25/%E8%88%8D%E5%BE%97%EF%BC%8C%E5%BE%97%E8%88%8D%E3%80%82/"/>
-    <id>http://stam1na.gitee.io/2017/11/25/%E8%88%8D%E5%BE%97%EF%BC%8C%E5%BE%97%E8%88%8D%E3%80%82/</id>
+    <link href="https://stam1na.gitee.io/2017/11/25/%E8%88%8D%E5%BE%97%EF%BC%8C%E5%BE%97%E8%88%8D%E3%80%82/"/>
+    <id>https://stam1na.gitee.io/2017/11/25/%E8%88%8D%E5%BE%97%EF%BC%8C%E5%BE%97%E8%88%8D%E3%80%82/</id>
     <published>2017-11-24T16:00:00.000Z</published>
     <updated>2021-10-19T09:49:56.433Z</updated>
     
@@ -260,8 +260,8 @@
   
   <entry>
     <title>石榴酒</title>
-    <link href="http://stam1na.gitee.io/2017/11/23/%E7%9F%B3%E6%A6%B4%E9%85%92/"/>
-    <id>http://stam1na.gitee.io/2017/11/23/%E7%9F%B3%E6%A6%B4%E9%85%92/</id>
+    <link href="https://stam1na.gitee.io/2017/11/23/%E7%9F%B3%E6%A6%B4%E9%85%92/"/>
+    <id>https://stam1na.gitee.io/2017/11/23/%E7%9F%B3%E6%A6%B4%E9%85%92/</id>
     <published>2017-11-22T16:00:00.000Z</published>
     <updated>2021-10-19T06:44:24.444Z</updated>
     
@@ -280,8 +280,8 @@
   
   <entry>
     <title>杂记</title>
-    <link href="http://stam1na.gitee.io/2017/11/20/%E6%9D%82%E8%AE%B0/"/>
-    <id>http://stam1na.gitee.io/2017/11/20/%E6%9D%82%E8%AE%B0/</id>
+    <link href="https://stam1na.gitee.io/2017/11/20/%E6%9D%82%E8%AE%B0/"/>
+    <id>https://stam1na.gitee.io/2017/11/20/%E6%9D%82%E8%AE%B0/</id>
     <published>2017-11-19T16:00:00.000Z</published>
     <updated>2021-10-19T09:48:52.943Z</updated>
     
@@ -297,8 +297,8 @@
   
   <entry>
     <title>上海</title>
-    <link href="http://stam1na.gitee.io/2017/11/17/%E4%B8%8A%E6%B5%B7/"/>
-    <id>http://stam1na.gitee.io/2017/11/17/%E4%B8%8A%E6%B5%B7/</id>
+    <link href="https://stam1na.gitee.io/2017/11/17/%E4%B8%8A%E6%B5%B7/"/>
+    <id>https://stam1na.gitee.io/2017/11/17/%E4%B8%8A%E6%B5%B7/</id>
     <published>2017-11-16T16:00:00.000Z</published>
     <updated>2021-10-19T09:50:16.549Z</updated>
     
@@ -318,8 +318,8 @@
   
   <entry>
     <title>无题</title>
-    <link href="http://stam1na.gitee.io/2017/11/04/%E6%97%A0%E9%A2%98/"/>
-    <id>http://stam1na.gitee.io/2017/11/04/%E6%97%A0%E9%A2%98/</id>
+    <link href="https://stam1na.gitee.io/2017/11/04/%E6%97%A0%E9%A2%98/"/>
+    <id>https://stam1na.gitee.io/2017/11/04/%E6%97%A0%E9%A2%98/</id>
     <published>2017-11-03T16:00:00.000Z</published>
     <updated>2021-10-19T09:48:42.918Z</updated>
     
@@ -335,8 +335,8 @@
   
   <entry>
     <title>趁年轻，努力爱</title>
-    <link href="http://stam1na.gitee.io/2017/10/15/%E8%B6%81%E5%B9%B4%E8%BD%BB%EF%BC%8C%E5%8A%AA%E5%8A%9B%E7%88%B1/"/>
-    <id>http://stam1na.gitee.io/2017/10/15/%E8%B6%81%E5%B9%B4%E8%BD%BB%EF%BC%8C%E5%8A%AA%E5%8A%9B%E7%88%B1/</id>
+    <link href="https://stam1na.gitee.io/2017/10/15/%E8%B6%81%E5%B9%B4%E8%BD%BB%EF%BC%8C%E5%8A%AA%E5%8A%9B%E7%88%B1/"/>
+    <id>https://stam1na.gitee.io/2017/10/15/%E8%B6%81%E5%B9%B4%E8%BD%BB%EF%BC%8C%E5%8A%AA%E5%8A%9B%E7%88%B1/</id>
     <published>2017-10-14T16:00:00.000Z</published>
     <updated>2021-10-19T09:50:36.145Z</updated>
     
@@ -352,8 +352,8 @@
   
   <entry>
     <title>关于抉择，我有话说。</title>
-    <link href="http://stam1na.gitee.io/2017/10/11/%E5%85%B3%E4%BA%8E%E6%8A%89%E6%8B%A9%EF%BC%8C%E6%88%91%E6%9C%89%E8%AF%9D%E8%AF%B4%E3%80%82/"/>
-    <id>http://stam1na.gitee.io/2017/10/11/%E5%85%B3%E4%BA%8E%E6%8A%89%E6%8B%A9%EF%BC%8C%E6%88%91%E6%9C%89%E8%AF%9D%E8%AF%B4%E3%80%82/</id>
+    <link href="https://stam1na.gitee.io/2017/10/11/%E5%85%B3%E4%BA%8E%E6%8A%89%E6%8B%A9%EF%BC%8C%E6%88%91%E6%9C%89%E8%AF%9D%E8%AF%B4%E3%80%82/"/>
+    <id>https://stam1na.gitee.io/2017/10/11/%E5%85%B3%E4%BA%8E%E6%8A%89%E6%8B%A9%EF%BC%8C%E6%88%91%E6%9C%89%E8%AF%9D%E8%AF%B4%E3%80%82/</id>
     <published>2017-10-10T16:00:00.000Z</published>
     <updated>2021-10-19T09:47:42.358Z</updated>
     
